@@ -1,0 +1,83 @@
+.set1 {
+    display: flex;
+    position: relative;
+    background: transparent;
+    width: 90vw;
+    height: 60vh;
+    border: 1px solid black;
+
+}
+
+.tree {
+    position: relative;
+    top: 0px;
+    left: 60px;
+    width: 140px;
+    height: 140px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: animate 6s linear infinite;
+}
+.tree::before {
+    content: '🌟';
+    position: absolute;
+    top: 40px;
+    left: calc(50% - 30px);
+    font-size: 3em;
+}
+@keyframes animate {
+    0% {
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+    100% {
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+.tree div {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(50px * var(--j)))
+}
+
+.top span {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #dd7777);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #ffffff;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg) translateZ(80px) ;
+}
+
+.bottom span {
+    position: absolute;
+    top: 330px;
+    left: calc(50% - 15px);
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff0000);
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    transform-origin: bottom;
+    border-bottom: 10px solid #ffffff;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(15px) ;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 0, 0, 0.383);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-400px);
+    filter: blur(20px);
+}
