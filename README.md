@@ -2,4 +2,4 @@
 
 https://plehlowla.github.io/Animated-Christmas-Tree-using-Html---CSS-Only---CSS/
 
-![christmas tree](#christmas-tree)
+![christmas tree](#chirstmas-tree.png)
